@@ -35,7 +35,6 @@ During the data preparation phase, multiple cleaning operations were performed t
 1. **Dropped Unnecessary Columns**
    - Removed redundant or irrelevant columns such as:
      - `Unnamed: 0` (auto-generated index)
-     - `Business_Associate_Involved` (mostly `Unknown` values)
 
 2. **Renamed Columns**
    - Changed `Number` → `ID` for clarity and consistency.
@@ -108,7 +107,6 @@ Transformation involves feature creation, encoding, and aggregation.
 - **Python 3.12+**
 - **Pandas** → Data manipulation  
 - **NumPy** → Numeric operations  
-- **Matplotlib / Seaborn** → Visualization  
 - **scikit-learn** → Label Encoding and preprocessing  
 
 ---
