@@ -5,7 +5,7 @@ import seaborn as sns
 from sklearn.preprocessing import StandardScaler
 
 # Load dataset
-df = pd.read_csv("data/main_dataset.csv")
+df = pd.read_csv("data/raw_dataset.csv")
 
 print(df.info())
 print(df.describe())

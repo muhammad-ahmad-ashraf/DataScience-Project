@@ -10,9 +10,9 @@ This project focuses on exploring and cleaning a real-world **Cybersecurity Brea
 
 - **Dataset Name:** Cyber Security Breaches
 - **Source:** [Publicly available on kaggle](https://www.kaggle.com/datasets/alukosayoenoch/cyber-security-breaches-data/data)
-- **File Used:** `data/main_dataset.csv`
+- **File Used:** `data/raw_dataset.csv`
 
-### 🔍 Key Columns
+### Key Columns
 | Column | Description |
 |---------|-------------|
 | **ID** | Unique identifier for each breach record |
