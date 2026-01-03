@@ -94,7 +94,7 @@ A global flow-map was created showing:
 
 ---
 
-## 🛠 Tools & Libraries
+## Tools & Libraries
 
 - **R Language**  
 - `tidyverse`, `sf`, `rnaturalearth`, `geosphere`  
@@ -103,7 +103,7 @@ A global flow-map was created showing:
 
 ---
 
-## 🏁 Final Conclusion
+## Final Conclusion
 
 This project demonstrates that cybersecurity breaches are **measurable, pattern-driven, and predictable**.  
 Temporal attributes, detection systems, and attack characteristics strongly influence breach duration, while global flow visualization reveals major international cyber-threat corridors.
