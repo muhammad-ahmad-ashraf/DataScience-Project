@@ -3,7 +3,7 @@ library(dplyr)
 library(readr)      
 library(lubridate)  
 
-df <- read_csv("data_cleaning_transformation_phase/data/new_dataset.csv")
+df <- read_csv("data_cleaning_transformation_phase/data/realistic_trend_dataset.csv")
 
 glimpse(df)
 summary(df)
@@ -65,7 +65,7 @@ avg_duration <- df %>%
   ) %>%
   arrange(desc(Avg_Duration))
 
-write_csv(df, "data_cleaning_transformation_phase/outputs/Cleaned_main_dataset.csv")
+write_csv(df, "data_cleaning_transformation_phase/outputs/Cleaned_new_main_dataset.csv")
 
 
 

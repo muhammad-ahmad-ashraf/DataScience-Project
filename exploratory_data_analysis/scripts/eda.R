@@ -6,13 +6,15 @@ library(readr)
 library(corrplot)
 library(tidyr)
 
-df <- read_csv("data_cleaning_transformation_phase/outputs/Cleaned_main_dataset.csv")
+df <- read_csv("data_cleaning_transformation_phase/outputs/Cleaned_new_main_dataset.csv")
 
 # Count of breaches by Attack_Type
 ggplot(df, aes(x = Attack_Type)) +
   geom_bar(fill = "steelblue") +
+
   labs(title = "Number of Breaches by Attack Type", x = "Attack Type", y = "Count") +
   theme(axis.text.x = element_text(angle = 45, hjust = 1))
+
 
 # Breach Severity distribution
 ggplot(df, aes(x = Breach_Severity)) +
@@ -35,6 +37,7 @@ ggplot(df, aes(x = Target_Sector)) +
 # Breach Duration vs Severity
 ggplot(df, aes(x = Breach_Severity, y = Breach_Duration)) +
   geom_boxplot(fill = "lightblue") +
+
   labs(title = "Breach Duration by Severity", x = "Severity", y = "Duration (Days)")
 
 # Attack_Type vs Avg Breach Duration
@@ -42,7 +45,7 @@ df %>%
   group_by(Attack_Type) %>%
   summarise(Avg_Duration = mean(Breach_Duration, na.rm = TRUE)) %>%
   ggplot(aes(x = reorder(Attack_Type, -Avg_Duration), y = Avg_Duration)) +
-  geom_bar(stat = "identity", fill = "steelblue") +
+  geom_point(stat = "identity", fill = "steelblue") +
   labs(title = "Average Breach Duration by Attack Type", x = "Attack Type", y = "Avg Duration (Days)") +
   theme(axis.text.x = element_text(angle = 45, hjust = 1))
 
@@ -65,11 +68,11 @@ corrplot::corrplot(duration_mat, method = "color", is.corr = FALSE, tl.col = "bl
 
 # Breaches over time (monthly)
 df %>%
-  group_by(Year, Breach_Month) %>%
+  group_by(Year) %>%
   summarise(Count = n()) %>%
-  ggplot(aes(x = interaction(Year, Breach_Month, sep = "-"), y = Count, group = 1)) +
+  ggplot(aes(x = interaction(Year), y = Count, group = 1)) +
   geom_line(color = "blue") +
-  geom_point() +
+  geom_point(method = "loess") +
   labs(title = "Breaches Over Time (Monthly)", x = "Year-Month", y = "Number of Breaches") +
   theme(axis.text.x = element_text(angle = 90, hjust = 1))
 
